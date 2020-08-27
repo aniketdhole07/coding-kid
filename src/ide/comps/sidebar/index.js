@@ -47,7 +47,7 @@ class Sidebar extends React.Component {
                     <Form onSubmit={this.handleSubmit.bind(this)} className="w-100">
                         <Form.Group className="mb-1" controlId="stdin">
                             <Form.Label><strong className="text-white">Input (stdin)</strong></Form.Label>
-                            <Form.Control onChange={this.handleStdin.bind(this)} name="stdin" as="textarea" rows="5" className="bg-dark border-secondary text-white" />
+                            <Form.Control onChange={this.handleStdin.bind(this)} name="stdin" as="textarea" rows="4" className="bg-dark border-secondary text-white" />
                         </Form.Group>
                         <Button className="ml-1" variant="danger" type="submit">Run</Button>
                     </Form>

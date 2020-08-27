@@ -106,6 +106,7 @@ class Main extends React.Component {
                     className="borderborder-primary"
                     ref={this.editor}
                     width="100%"
+                    height="450px"
                     mode={lang}
                     theme={thm}
                     value={code}
