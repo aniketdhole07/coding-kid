@@ -19,11 +19,42 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
 
+
+import ButtonBase from '@material-ui/core/ButtonBase';
+
 import { Container, Row} from 'react-bootstrap'
 
-
 const drawerWidth = 800;
-
+const images = [
+  {
+    url: 'https://i.ibb.co/SXjWH89/6.png',
+    title: 'Class 6th',
+    width: '30%',
+  },
+  {
+    url: 'https://i.ibb.co/ysvJcgQ/7.png',
+    title: 'Class 7th',
+    width: '30%',
+  },
+  {
+    url: 'https://i.ibb.co/J2X4zrg/8.png',
+    title: 'Class 8th',
+    width: '30%',
+  },
+];
+const images1 = [
+  {
+    url: 'https://i.ibb.co/zrVpmpr/9.png',
+    title: 'Class 9th',
+    width: '33%',
+  },
+  {
+    url: 'https://i.ibb.co/SJ5x0R6/10.png',
+    title: 'Class 10th',
+    width: '33%',
+  }
+  
+];
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -81,8 +112,85 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+const useStylesImg = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    flexFlow: 'row nowrap',
+    alignItems: 'center',
+    minWidth: 300,
+    
+    width: '100%',
+  },
+  image: {
+    position: 'relative',
+    height: 300,
+    [theme.breakpoints.down('xs')]: {
+      width: '100% !important', // Overrides inline-style
+      height: 100,
+    },
+    '&:hover, &$focusVisible': {
+      zIndex: 1,
+      '& $imageBackdrop': {
+        opacity: 0.05,
+      },
+      '& $imageMarked': {
+        opacity: 0,
+      },
+      '& $imageTitle': {
+        border: '4px solid currentColor',
+      },
+    },
+  },
+  focusVisible: {},
+  imageButton: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: theme.palette.common.white,
+  },
+  imageSrc: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center 40%',
+  },
+  imageBackdrop: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    backgroundColor: theme.palette.common.black,
+    opacity: 0.4,
+    transition: theme.transitions.create('opacity'),
+  },
+  imageTitle: {
+    position: 'relative',
+    padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(1) + 6}px`,
+  },
+  imageMarked: {
+    height: 3,
+    width: 18,
+    backgroundColor: theme.palette.common.white,
+    position: 'absolute',
+    bottom: -2,
+    left: 'calc(50% - 9px)',
+    transition: theme.transitions.create('opacity'),
+  },
+}));
+
 export default function PersistentDrawerRight() {
   const classes = useStyles();
+  const classesImg = useStylesImg();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -125,6 +233,71 @@ export default function PersistentDrawerRight() {
       >
         <div className={classes.drawerHeader} />
         <h1> Hello </h1>
+        <div className={classesImg.root}>
+      {images.map((image) => (
+        <ButtonBase
+          focusRipple
+          key={image.title}
+          className={classesImg.image}
+          focusVisibleClassName={classesImg.focusVisible}
+          style={{
+            width: image.width,
+          }}
+        >
+          <span
+            className={classesImg.imageSrc}
+            style={{
+              backgroundImage: `url(${image.url})`,
+            }}
+          />
+          <span className={classesImg.imageBackdrop} />
+          <span className={classesImg.imageButton}>
+            <Typography
+              component="span"
+              variant="subtitle1"
+              color="inherit"
+              className={classesImg.imageTitle}
+            >
+              {image.title}
+              <span className={classesImg.imageMarked} />
+            </Typography>
+          </span>
+        </ButtonBase>
+      ))}
+    </div>
+    <div className={classesImg.root}>
+      {images1.map((image) => (
+        <ButtonBase
+          focusRipple
+          key={image.title}
+          className={classesImg.image}
+          focusVisibleClassName={classesImg.focusVisible}
+          style={{
+            width: image.width,
+          }}
+        >
+          <span
+            className={classesImg.imageSrc}
+            style={{
+              backgroundImage: `url(${image.url})`,
+            }}
+          />
+          <span className={classesImg.imageBackdrop} />
+          <span className={classesImg.imageButton}>
+            <Typography
+              component="span"
+              variant="subtitle1"
+              color="inherit"
+              className={classesImg.imageTitle}
+            >
+              {image.title}
+              <span className={classesImg.imageMarked} />
+            </Typography>
+          </span>
+        </ButtonBase>
+      ))}
+    </div>
+
       </main>
       <Drawer
         className={classes.drawer}
