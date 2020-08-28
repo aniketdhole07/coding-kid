@@ -18,43 +18,50 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
-
+import {Link } from "react-router-dom";
 
 import ButtonBase from '@material-ui/core/ButtonBase';
 
 import { Container, Row} from 'react-bootstrap'
 
 const drawerWidth = 800;
-const images = [
+const c6 = [
   {
     url: 'https://i.ibb.co/SXjWH89/6.png',
     title: 'Class 6th',
-    width: '30%',
-  },
+    width: '33%',
+  }
+];
+const c7= [
   {
     url: 'https://i.ibb.co/ysvJcgQ/7.png',
     title: 'Class 7th',
-    width: '30%',
-  },
+    width: '33%',
+  }
+];
+const c8 = [
   {
     url: 'https://i.ibb.co/J2X4zrg/8.png',
     title: 'Class 8th',
-    width: '30%',
-  },
+    width: '33%',
+  }
 ];
-const images1 = [
+const c9= [
   {
     url: 'https://i.ibb.co/zrVpmpr/9.png',
     title: 'Class 9th',
     width: '33%',
-  },
+  }
+];
+const c10 = [
   {
     url: 'https://i.ibb.co/SJ5x0R6/10.png',
     title: 'Class 10th',
     width: '33%',
   }
-  
 ];
+
+  
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -116,15 +123,13 @@ const useStyles = makeStyles((theme) => ({
 const useStylesImg = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    flexFlow: 'row nowrap',
+    flexFlow: 'column',
     alignItems: 'center',
-    minWidth: 300,
     
-    width: '100%',
   },
   image: {
-    position: 'relative',
-    height: 300,
+    position: 'top',
+    height: 150,
     [theme.breakpoints.down('xs')]: {
       width: '100% !important', // Overrides inline-style
       height: 100,
@@ -149,17 +154,20 @@ const useStylesImg = makeStyles((theme) => ({
     right: 0,
     top: 0,
     bottom: 0,
+   
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: theme.palette.common.white,
+    color: theme.palette.common.black,
   },
   imageSrc: {
     position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
+    left: 60,
+    right: 60,
+    top: 10,
+    bottom: 10,
+
+    width: "auto",
     backgroundSize: 'cover',
     backgroundPosition: 'center 40%',
   },
@@ -169,8 +177,9 @@ const useStylesImg = makeStyles((theme) => ({
     right: 0,
     top: 0,
     bottom: 0,
+    
     backgroundColor: theme.palette.common.black,
-    opacity: 0.4,
+    opacity: 0.3,
     transition: theme.transitions.create('opacity'),
   },
   imageTitle: {
@@ -180,7 +189,7 @@ const useStylesImg = makeStyles((theme) => ({
   imageMarked: {
     height: 3,
     width: 18,
-    backgroundColor: theme.palette.common.white,
+    backgroundColor: theme.palette.common.black,
     position: 'absolute',
     bottom: -2,
     left: 'calc(50% - 9px)',
@@ -233,8 +242,11 @@ export default function PersistentDrawerRight() {
       >
         <div className={classes.drawerHeader} />
         <h1> Hello </h1>
+        <Link to="../class6">
         <div className={classesImg.root}>
-      {images.map((image) => (
+        
+      {c6.map((image) => (
+        
         <ButtonBase
           focusRipple
           key={image.title}
@@ -247,57 +259,176 @@ export default function PersistentDrawerRight() {
           <span
             className={classesImg.imageSrc}
             style={{
+              
               backgroundImage: `url(${image.url})`,
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              
             }}
           />
           <span className={classesImg.imageBackdrop} />
           <span className={classesImg.imageButton}>
             <Typography
               component="span"
-              variant="subtitle1"
+              variant="h5"
               color="inherit"
               className={classesImg.imageTitle}
+              fontWeight="fontWeightBold"
+              m={1}
             >
               {image.title}
               <span className={classesImg.imageMarked} />
             </Typography>
           </span>
         </ButtonBase>
+        
       ))}
-    </div>
-    <div className={classesImg.root}>
-      {images1.map((image) => (
-        <ButtonBase
-          focusRipple
-          key={image.title}
-          className={classesImg.image}
-          focusVisibleClassName={classesImg.focusVisible}
-          style={{
-            width: image.width,
-          }}
-        >
-          <span
-            className={classesImg.imageSrc}
-            style={{
-              backgroundImage: `url(${image.url})`,
-            }}
-          />
-          <span className={classesImg.imageBackdrop} />
-          <span className={classesImg.imageButton}>
-            <Typography
-              component="span"
-              variant="subtitle1"
-              color="inherit"
-              className={classesImg.imageTitle}
-            >
-              {image.title}
-              <span className={classesImg.imageMarked} />
-            </Typography>
-          </span>
-        </ButtonBase>
-      ))}
-    </div>
 
+    </div>
+    </Link>
+    <Link to="../class7">
+    <div className={classesImg.root}>
+      {c7.map((image) => (
+        <ButtonBase
+          focusRipple
+          key={image.title}
+          className={classesImg.image}
+          focusVisibleClassName={classesImg.focusVisible}
+          style={{
+            width: image.width,
+          }}
+        >
+          <span
+            className={classesImg.imageSrc}
+            style={{
+              backgroundImage: `url(${image.url})`,
+              
+            }}
+          />
+          <span className={classesImg.imageBackdrop} />
+          <span className={classesImg.imageButton}>
+            <Typography
+              component="span"
+              variant="h5"
+              color="inherit"
+              className={classesImg.imageTitle}
+            >
+              {image.title}
+              <span className={classesImg.imageMarked} />
+            </Typography>
+          </span>
+        </ButtonBase>
+      ))}
+    </div>
+    </Link>
+    
+    <Link to="../class8">
+    <div className={classesImg.root}>
+      {c8.map((image) => (
+        <ButtonBase
+          focusRipple
+          key={image.title}
+          className={classesImg.image}
+          focusVisibleClassName={classesImg.focusVisible}
+          style={{
+            width: image.width,
+          }}
+        >
+          <span
+            className={classesImg.imageSrc}
+            style={{
+              backgroundImage: `url(${image.url})`,
+              
+            }}
+          />
+          <span className={classesImg.imageBackdrop} />
+          <span className={classesImg.imageButton}>
+            <Typography
+              component="span"
+              variant="h5"
+              color="inherit"
+              className={classesImg.imageTitle}
+            >
+              {image.title}
+              <span className={classesImg.imageMarked} />
+            </Typography>
+          </span>
+        </ButtonBase>
+      ))}
+    </div>
+    </Link>
+    
+    <Link to="../class9">
+    <div className={classesImg.root}>
+      {c9.map((image) => (
+        <ButtonBase
+          focusRipple
+          key={image.title}
+          className={classesImg.image}
+          focusVisibleClassName={classesImg.focusVisible}
+          style={{
+            width: image.width,
+          }}
+        >
+          <span
+            className={classesImg.imageSrc}
+            style={{
+              backgroundImage: `url(${image.url})`,
+              
+            }}
+          />
+          <span className={classesImg.imageBackdrop} />
+          <span className={classesImg.imageButton}>
+            <Typography
+              component="span"
+              variant="h5"
+              color="inherit"
+              className={classesImg.imageTitle}
+            >
+              {image.title}
+              <span className={classesImg.imageMarked} />
+            </Typography>
+          </span>
+        </ButtonBase>
+      ))}
+    </div>
+    </Link>
+
+    <Link to="../class10">
+    <div className={classesImg.root}>
+      {c10.map((image) => (
+        <ButtonBase
+          focusRipple
+          key={image.title}
+          className={classesImg.image}
+          focusVisibleClassName={classesImg.focusVisible}
+          style={{
+            width: image.width,
+          }}
+        >
+          <span
+            className={classesImg.imageSrc}
+            style={{
+              backgroundImage: `url(${image.url})`,
+              
+            }}
+          />
+          <span className={classesImg.imageBackdrop} />
+          <span className={classesImg.imageButton}>
+            <Typography
+              component="span"
+              variant="h5"
+              color="inherit"
+              className={classesImg.imageTitle}
+            >
+              {image.title}
+              <span className={classesImg.imageMarked} />
+            </Typography>
+          </span>
+        </ButtonBase>
+      ))}
+    </div>
+    </Link>
       </main>
       <Drawer
         className={classes.drawer}
