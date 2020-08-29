@@ -1,0 +1,43 @@
+[
+    {
+        "id":101,
+      "title": "hard A LEGACY PUZZLE",
+      "description": "A man left legacies to his three sons and to a hospital, amounting in all to $1,320.00. If he had left the hospital legacy also to his first son, that son would have received as much as the other two sons together. If he had left it to his second son, he would have received twice as much as the other two sons together. If he had left the hospital legacy to his third son, he would have re-ceived then thrice as much as the first son andsecond son together. Find the amount of third son.",
+      "answer":"385",
+      "explanation": "The legacy to the first son was $55.00, to the second son $275.00, to the third son $385.00, and to the hospital $605.00,making $1,320.00 in all.",
+      "standard":8,
+      "type":"e"
+    },
+    {
+        "id":102,
+      "title": "hard WORKING ALONE",
+      "description": "Alfred and Bill together can do a piece of work in twenty-four days. If Alfred can do only two-thirds as much as Bill, howlong will it Alfred to do the work alone?",
+      "answer": "60",
+      "explanation": "Let Alfred take x work per day and Bill do y work in one day x+y=1/24 and x=(1/(2/3))y so x=1/60 and y=1/40,so 60 Days. ",
+      "standard": 6 ,
+      "type":"m"
+      
+    },
+    {
+        "id":103,
+      "title": "hard A LEGACY PUZZLE",
+      "description": "A man left legacies to his three sons and to a hospital, amounting in all to $1,320.00. If he had left the hospital legacy also to his first son, that son would have received as much as the other two sons together. If he had left it to his second son, he would have received twice as much as the other two sons together. If he had left the hospital legacy to his third son, he would have re-ceived then thrice as much as the first son andsecond son together. Find the amount of third son.",
+      "answer":"385",
+      "explanation": "The legacy to the first son was $55.00, to the second son $275.00, to the third son $385.00, and to the hospital $605.00,making $1,320.00 in all.",
+      "standard":8,
+      "type":"e"
+    },
+    {
+        "id":104,
+      "title": "hard WORKING ALONE",
+      "description": "Alfred and Bill together can do a piece of work in twenty-four days. If Alfred can do only two-thirds as much as Bill, howlong will it Alfred to do the work alone?",
+      "answer": "60",
+      "explanation": "Let Alfred take x work per day and Bill do y work in one day x+y=1/24 and x=(1/(2/3))y so x=1/60 and y=1/40,so 60 Days. ",
+      "standard": 6 ,
+      "type":"m"
+      
+    }
+    
+    
+    
+  ]
