@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+.heading{
+	text-align: center;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.nvbar{
+	background-image: url("./a3.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	height: 2000px;
+	
+} 
+
+.crd{
+	margin-left: 100px;
+	margin-right: 100px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.flex-container {
+ opacity: 0.7;
+}
+
+.card6{
+  display: grid;
+  grid-template-columns: 200px;
+  grid-template-rows: 150px 180px ;
+  grid-template-areas: "image6" "text" ;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+  font-family:Arial, Helvetica, sans-serif;
+  text-align: center;
+    transition: 0.5s ease;
+  cursor: pointer;
+  margin:30px;
+  opacity: 0.9;
+}
+
+.card-image6 {
+  grid-area: image6;
+  background: url("https://i.ibb.co/NxszFwt/6six.gif");
+  border-top-left-radius: 17px;
+  border-top-right-radius: 17px;
+  background-size: cover;
+
+}
+.card7{
+  display: grid;
+  grid-template-columns: 200px;
+  grid-template-rows: 150px 180px ;
+  grid-template-areas: "image7" "text" ;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+    transition: 0.5s ease;
+  cursor: pointer;
+  margin:30px;
+  opacity: 0.9;
+}
+
+.card-image7 {
+  grid-area: image7;
+  background: url("https://i.ibb.co/pP7tj1P/7seven.gif");
+  border-top-left-radius: 17px;
+  border-top-right-radius: 17px;
+  background-size: cover;
+
+}
+.card8{
+  display: grid;
+  grid-template-columns: 200px;
+  grid-template-rows: 150px 180px ;
+  grid-template-areas: "image8" "text" ;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+    transition: 0.5s ease;
+  cursor: pointer;
+  margin:30px;
+  opacity: 0.9;
+}
+
+.card-image8 {
+  grid-area: image8;
+  background: url("https://i.ibb.co/6wZj3HY/8eight.gif");
+  border-top-left-radius: 17px;
+  border-top-right-radius: 17px;
+  background-size: cover;
+
+}
+.card9{
+  display: grid;
+  grid-template-columns: 200px;
+  grid-template-rows: 150px 180px ;
+  grid-template-areas: "image9" "text" ;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+    transition: 0.5s ease;
+  cursor: pointer;
+  margin:30px;
+  opacity: 0.9;
+}
+
+.card-image9 {
+  grid-area: image9;
+  background: url("https://i.ibb.co/ctwzSHg/9nine.gif");
+  border-top-left-radius: 17px;
+  border-top-right-radius: 17px;
+  background-size: cover;
+
+}
+.card10{
+  display: grid;
+  grid-template-columns: 200px;
+  grid-template-rows: 150px 180px ;
+  grid-template-areas: "image10" "text" ;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+    transition: 0.5s ease;
+  cursor: pointer;
+  margin:30px;
+  opacity: 0.9;
+}
+
+.card-image10 {
+  grid-area: image10;
+  background: url("https://i.ibb.co/tmZCjs5/10ten.gif");
+  border-top-left-radius: 17px;
+  border-top-right-radius: 17px;
+  background-size: cover;
+
+}
+.card-text {
+  grid-area: text;
+  margin: 25px;
+}
+.card-text .date {
+  color: rgb(255, 255, 255);
+  font-size:13px;
+}
+.card-text ul {
+	margin: 5px;
+  color: rgb(0,0,0);
+  font-size:15px;
+  font-weight: 300;
+}
+.card-text h2 {
+	color: rgb(0,0,0);
+  margin-top:0px;
+  font-size:28px;
+}
+.card6:hover {
+	opacity: 1;
+  transform: scale(1.15);
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+}
+.card7:hover {
+	opacity: 1;
+  transform: scale(1.15);
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+}
+.card8:hover {
+	opacity: 1;
+  transform: scale(1.15);
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+}
+.card9:hover {
+	opacity: 1;
+  transform: scale(1.15);
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+}
+.card10:hover {
+	opacity: 1;
+  transform: scale(1.15);
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+}

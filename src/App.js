@@ -12,7 +12,7 @@ function App() {
       <Switch>
       
       <Route path="/class6"  component={C6} />
-      
+      <Route path="/class6/:post.id"  component={C6} />
       <Route path="/class7"  component={C7} />
       <Route path="/class8"  component={C8} />
       <Route path="/class9"  component={C9} />
