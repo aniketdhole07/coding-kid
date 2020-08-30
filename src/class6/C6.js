@@ -6,11 +6,12 @@ import QuizSummary from './quizsummary'
 import {Link} from 'react-router-dom'
 import Tab from 'react-bootstrap/Tab'
 import { Container, Row,Col,Nav} from 'react-bootstrap'
+import "./C6.css"
 function C6() {
 	return (
-
-
-      <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+    <div>
+    <h1>Class 6th</h1>
+       <Tab.Container id="left-tabs-example" defaultActiveKey="first">
       <Row>
         <Col sm={3}>
           <Nav variant="pills" className="flex-column">
@@ -58,7 +59,11 @@ function C6() {
         </Col>
       </Row>
       </Tab.Container>
+
+</div>
+    
 	)
 }
 
 export default C6
+

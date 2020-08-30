@@ -7,9 +7,32 @@ import C8 from './class8/C8.js';
 import C9 from './class9/C9.js';
 import C10 from './class10/C10.js';
 import QuizDetails from './class6/quizdetails.js'
+import Navbar from 'react-bootstrap/Navbar'
+import { Container, Row,Nav} from 'react-bootstrap'
+import NavDropdown from 'react-bootstrap/NavDropdown'
 function App() {
   return (
+
     <BrowserRouter>
+    <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark" class="bg-custom" fixed="top">
+          <Navbar.Brand href="#home">Coding-Kid</Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/pro">Pro Version</Nav.Link>
+              <Nav.Link href="/about">About Us</Nav.Link>
+              
+            </Nav>
+            <Nav>
+              <Nav.Link href="#deets">Leaderboard</Nav.Link>
+              <Nav.Link  href="#memes">
+                User
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+
       <Switch>
       
       <Route path="/class6"  component={C6} />

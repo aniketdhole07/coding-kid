@@ -8,12 +8,25 @@
   margin-right: auto;
   
 }
+.fixed-top {
+    position:fixed !important;
+}
 .heading{
+  padding-top:100px;
 	text-align: center;
 	font-family:Arial, Helvetica, sans-serif;
 }
-
+.desp{
+  margin-bottom: 100px;
+}
+.howitworks{
+  color: white;
+   display: block;
+  align-self: center;
+  width: 50%;
+}
 .nvbar{
+
 	background-image: url("./a3.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -21,7 +34,12 @@
 	height: 2000px;
 	
 } 
-
+.howimage{
+ 
+}
+.bg-custom{
+  background-color: #1897f2;
+}
 .crd{
 	margin-left: 100px;
 	margin-right: 100px;
