@@ -8,7 +8,7 @@ import Tab from 'react-bootstrap/Tab'
 import { Container, Row,Col,Nav} from 'react-bootstrap'
 import "./C6.css"
 function C6() {
-	return (
+  return (
     <div>
     <h1>Class 6th</h1>
        <Tab.Container id="left-tabs-example" defaultActiveKey="first">
@@ -46,7 +46,7 @@ function C6() {
                 )
               })}
             </Tab.Pane>
-          </Tab.Content>
+          
           <Tab.Pane eventKey="third">
               {quizesH.map(quiz1=>{
                 return(
@@ -56,14 +56,14 @@ function C6() {
                 )
               })}
             </Tab.Pane>
+            </Tab.Content>
         </Col>
       </Row>
       </Tab.Container>
 
 </div>
     
-	)
+  )
 }
 
 export default C6
-

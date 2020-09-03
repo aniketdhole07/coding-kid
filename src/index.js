@@ -5,14 +5,19 @@ import App from './App';
 import { Provider } from 'react-redux'
 import store from './ide/store'
 import * as serviceWorker from './serviceWorker';
+import Firebase, { FirebaseContext } from './firebase';
 require('dotenv').config()
 
 ReactDOM.render( 
+  <FirebaseContext.Provider value={new Firebase()}>
   <Provider store={store}>
     <React.StrictMode>
-      <App />
+	    
+	      <App />
+	    
     </React.StrictMode>
   </Provider>
+  </FirebaseContext.Provider>
   , document.getElementById('root')
 );
 

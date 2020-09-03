@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:300, 400, 700');
+$blue: #5352ed;
+$dark: #2f3542;
+$red: #ff4757;
+body {margin: 0;}
+:root {
+  font-family: 'Nunito', sans-serif;
+}
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+small {
+  font-size: 0.9em;
+  line-height: 2.5em;
+  display: block;
+  color: #555;
+}
+.btn {
+  display: inline-block;
+  padding: 15px 25px;
+  border-radius: 23px;
+  text-decoration: none;
+  color: white;
+  white-space: nowrap;
+  line-height: 1em;
+  background: $red;
+  border: 0;
+  cursor: pointer;
+  transition: transform .2s;
+  &:hover {
+    transform: scale(1.05);
+  }
+  &.btn-light {
+    color: $red;
+    background: white;
+    border: 2px solid $red;
+  }
+}
+.form {
+  position: relative;
+  width: 80vw;
+  max-width: 800px;
+  background: white;
+  margin: 0 auto;
+  box-shadow: 0 3px 6px rgba(black, .2);
+  
+  &__wrapper {
+    width: 100%;
+    height: 100vh;
+    padding: 10vh 20px;
+    background: $blue;
+  }
+  &__options {
+    padding: 160px 0;
+    display: flex;
+    & > div {
+      width: 50%;
+      text-align: center;
+    }
+  }
+  &.slide .form__background {
+    left: 50%;
+    right: -20px;
+  }
+  &__background {
+    position: absolute;
+    background: $dark;
+    top: -20px;
+    left: -20px;
+    right: 50%;
+    bottom: -20px;
+    box-shadow: 0 5px 15px rgba(black, .3);
+    margin-left: -40px;
+    transition: .5s cubic-bezier(0.85, 0, 0.15, 1);
+    
+  }
+  &__body {
+    position: absolute;
+    top: 0;
+    left: -20px;
+    right: -20px;
+    bottom: 0;
+    padding: 20px 0;
+    transition: .5s;
+    display: flex;
+    justify-content: space-around;
+    pointer-events: none;
+    form {
+      pointer-events: all;
+      margin: 20px 0;
+      transition: opacity .3s;
+      h2 {
+        margin-top: 0;
+        color: white;
+        font-size: 3em;
+      }
+      .input-field {
+        margin-bottom: 10px;
+      }
+      label {
+        display: block;
+        color: white;
+        font-size: .6em;
+        line-height: 2em;
+        font-weight: 300;
+      }
+      input[type="text"], input[type="password"], input[type="email"] {
+        padding: 8px;
+        border: 0;
+        border-radius: 5px;
+      }
+    }
+  }
+  form:first-child{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: .4s;
+  }
+  &.slide form:first-child{
+    opacity: 0;
+    visibility: hidden;
+    transition-delay: 0s;
+  }
+  form:last-child {
+    opacity: 0;
+    visibility: hidden;
+    transition-delay: 0s;
+  }
+  &.slide form:last-child {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: .4s;
+  }
+}

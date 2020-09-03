@@ -1,0 +1,37 @@
+[
+    
+    {
+        "id":201,
+      "title": "WORKING ALONE1",
+      "description": "Alfred and Bill together can do a piece of work in twenty-four days. If Alfred can do only two-thirds as much as Bill, howlong will it Alfred to do the work alone?",
+      "answer": "60",
+      "explanation": "Let Alfred take x work per day and Bill do y work in one day x+y=1/24 and x=(1/(2/3))y so x=1/60 and y=1/40,so 60 Days. ",
+      "standard": 6 ,
+      "type":"m"
+      
+    },
+  
+    {
+        "id":202,
+      "title": "WORKING ALONE2",
+      "description": "Alfred and Bill together can do a piece of work in twenty-four days. If Alfred can do only two-thirds as much as Bill, howlong will it Alfred to do the work alone?",
+      "answer": "60",
+      "explanation": "Let Alfred take x work per day and Bill do y work in one day x+y=1/24 and x=(1/(2/3))y so x=1/60 and y=1/40,so 60 Days. ",
+      "standard": 6 ,
+      "type":"m"
+      
+    },
+   
+    {
+        "id":203,
+      "title": "WORKING ALONE3",
+      "description": "Alfred and Bill together can do a piece of work in twenty-four days. If Alfred can do only two-thirds as much as Bill, howlong will it Alfred to do the work alone?",
+      "answer": "60",
+      "explanation": "Let Alfred take x work per day and Bill do y work in one day x+y=1/24 and x=(1/(2/3))y so x=1/60 and y=1/40,so 60 Days. ",
+      "standard": 6 ,
+      "type":"m"
+      
+    }
+    
+    
+  ]

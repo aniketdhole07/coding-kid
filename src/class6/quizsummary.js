@@ -1,14 +1,30 @@
 import React from 'react'
-
+import "./C6.css"
+import {Card,Tooltip,Button,OverlayTrigger} from 'react-bootstrap'
 const QuizSummary = ({quiz}) => {
-
+  function handletooltip(props)
+  {
+  	return(
+  		<Tooltip id="button-tooltip" {...props} >
+  		{quiz.description.substr(0,50)+"....."}
+  		</Tooltip>
+  		)
+  }
     return (
-        <div className="card z-depth-0 quiz">
-            < div className="card-content grey-text text-darken-4"> 
-             <span className="card-title">{quiz.title}</span>
-             <p className="card-content">{quiz.description.substring(0,15)+"......"} </p>
-        </div>
-        </div>
+
+         <OverlayTrigger placement="top"
+          overlay={handletooltip}
+         >
+        <Card>
+        <Card.Header>{quiz.title}
+        <div class="rating">
+           <span class="star">☆</span>
+        </div>   
+
+        </Card.Header>
+                </Card>
+
+        </OverlayTrigger>
     )
 }
 

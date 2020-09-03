@@ -2,3 +2,12 @@ body {
   background-color: white;
   padding-top: 70px;
 }
+
+.rating {
+  font-size: 20px;
+  float: right;
+}
+
+.rating > span:hover{
+   color: gold;
+}
