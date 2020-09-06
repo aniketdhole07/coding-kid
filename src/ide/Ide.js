@@ -19,7 +19,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
 import {Link } from "react-router-dom";
-import Slideshow from "./Slideshow.js";
+
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Navbar from 'react-bootstrap/Navbar'
 import { Container, Row,Nav} from 'react-bootstrap'
@@ -35,8 +35,8 @@ export default function PersistentDrawerRight() {
       <div>
         
         <div className="nvbar">
-        <h1 className="heading"> Welcome to Coding-Kid </h1>
-        <h5 align="center" className="desp"> Learn Coding by solving Puzzles</h5>
+        <h1 className="heading"> <span>Welcome to Coding-Kid</span> </h1>
+        <h5 align="center" className="desp"><span> Learn Coding by Solving Puzzles</span></h5>
         <div className="crd">
 
 
@@ -79,7 +79,7 @@ export default function PersistentDrawerRight() {
                   <li>2D Geometry</li>
                   <li>Graphs</li>
                   <li>Trees</li>
-                  <li>Sorting Algorithm</li>
+                  <li>Sorting Algorithms</li>
                 </ul>
               </div>
           </div>
@@ -89,7 +89,7 @@ export default function PersistentDrawerRight() {
             <div class="card-image9"></div>
               <div class="card-text">
                 <span class="date"></span>
-                <h2>Class 9th</h2>
+                <h2 className="headingtext">Class 9th</h2>
                 <ul>
                   <li>Classical Algorithms</li>
                   <li>Combinatrics</li>
@@ -104,7 +104,7 @@ export default function PersistentDrawerRight() {
             <div class="card-image10"></div>
               <div class="card-text">
                 <span class="date"></span>
-                <h2>Class 10th</h2>
+                <h2 >Class 10th</h2>
                 <ul>
                   <li>Dynamic Programming</li>
                   <li>Game Theory</li>

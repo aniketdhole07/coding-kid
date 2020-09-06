@@ -9,7 +9,6 @@ import {
     REQUEST_ERROR,
     REQUEST_QUEUED
 } from './actions'
-import { combineReducers } from 'redux'
 let defaultState = {
     editor: {
         code: '',
@@ -84,7 +83,8 @@ function request(state = defaultState.request, action) {
     }
 }
 
-export default combineReducers({
+export {
+
     editor,
     request
-});
+}

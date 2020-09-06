@@ -5,11 +5,27 @@ import quizesH from '../ide/datajsons/H6.json'
 import QuizSummary from './quizsummary'
 import {Link} from 'react-router-dom'
 import Tab from 'react-bootstrap/Tab'
+import createquiz from "./createquiz.js"
+import { connect } from 'react-redux'
 import { Container, Row,Col,Nav} from 'react-bootstrap'
+import { firestoreConnect} from  'react-redux-firebase'
+import { compose } from 'redux'
 import "./C6.css"
-function C6() {
+function C6({projects}) {
+
+
+  var anyBoxesChecked = [];
+  var numeroPerguntas = 500;     
+  for (var i = 0; i < numeroPerguntas; i++) {
+    anyBoxesChecked.push(false);
+  }
+  console.log(
+  {projects}
+);
+
   return (
     <div>
+    
     <h1>Class 6th</h1>
        <Tab.Container id="left-tabs-example" defaultActiveKey="first">
       <Row>
@@ -60,10 +76,23 @@ function C6() {
         </Col>
       </Row>
       </Tab.Container>
-
+     
 </div>
     
   )
 }
 
-export default C6
+const mapStateToProps=(state)=>{
+
+  //console.log(state);
+  return{
+    projects: state.firestore
+  }
+}
+export default compose(
+
+firestoreConnect([
+    { collection: 'quiz' }
+  ]),
+  connect(mapStateToProps)
+)(C6)

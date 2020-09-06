@@ -1,91 +1,47 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-
+import {connect} from 'react-redux';
+import {signIn} from '../store/authAction.js'
+import {signUp} from '../store/authAction.js'
 import { withFirebase } from '../firebase';
 import "./Signin.css";
 import $ from 'jquery';
-const SignUpPage = () => (
-  <div>
-    <h1>SignUp</h1>
-    <SignUpForm />
-  </div>
-);
 
-const INITIAL_STATE = {
-  name: '',
-  email: '',
-  password: '',
-  error: null,
-  email_si: '',
-  password_si: '',
-  error_si: null,
-};
+
+
 
 
 class SignUpFormBase extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = { ...INITIAL_STATE };
+  
+  state = {
+    name: '',
+    email: '',
+    password: '',
+    email_si: '',
+    password_si: ''
   }
+  
 
   onSubmit = event => {
-    const { name, email, password} = this.state;
-
-    this.props.firebase
-      .doCreateUserWithEmailAndPassword(email, password)
-      
-      .then(authUser => {
-        this.setState({ ...INITIAL_STATE });
-        this.props.history.push("/");
-      })
-      .catch(error => {
-        this.setState({ error });
-      });
-
     event.preventDefault();
+    this.props.signUp(this.state)
   };
   
   onSignin = event => {
-    const { email_si, password_si } = this.state;
- 
-    this.props.firebase
-      .doSignInWithEmailAndPassword(email_si, password_si)
-      .then(() => {
-        this.setState({ ...INITIAL_STATE });
-        this.props.history.push("/");
-      })
-      .catch(error => {
-        this.setState({ error });
-      });
- 
     event.preventDefault();
+    this.props.signIn(this.state)
   };
 
   onChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  
 
   render() {
-    const {
-      name,
-      email,
-      password,
-      error,
-      email_si,
-      password_si,
-      error_si
-    } = this.state;
 
-    const isInvalid =
-      password === '' ||
-      email === '' ||
-      name === '';
-
-    const isInvalid_si = password_si === '' || email_si === '';
-
+    const { auth,authError}=this.props;
+    if (auth.uid) return <Link to='/' /> 
     $(document).ready(function(){
       $(".veen .rgstr-btn button").click(function(){
         $('.veen .wrapper').addClass('move');
@@ -116,41 +72,42 @@ class SignUpFormBase extends Component {
               <p>Don't have an account?</p>
               <button>Register</button>
             </div>
+
             <div class="wrapper">
               <form id="login" tabindex="500" onSubmit={this.onSignin}>
                 <h3>Login</h3>
                 <div class="mail">
-                  <input name="email_si" value={email_si} onChange={this.onChange} type="text" />
+                  <input name="email_si" id="email_si" onChange={this.onChange} type="text" />
                   <label>Mail or Username</label>
                 </div>
                 <div class="passwd">
-                  <input name="password_si" value={password_si} onChange={this.onChange} type="password" />
+                  <input name="password_si" id="password_si" onChange={this.onChange} type="password" />
                   <label>Password</label>
                 </div>
                 <div class="submit">
-                  <button disabled={isInvalid_si} class="dark">Login</button>
+                  <button  class="dark">Login</button>
                 </div>
-                {error_si && <p>{error_si.message}</p>}
+                 { authError ? <p>{authError}</p> : null }
               </form>
 
               <form id="register" tabindex="502" onSubmit={this.onSubmit}>
                 <h3>Register</h3>
                 <div class="name">
-                  <input type="text" name="name" value={name} onChange={this.onChange} />
+                  <input type="text" name="name"  onChange={this.onChange} />
                   <label>Full Name</label>
                 </div>
                 <div class="email">
-                  <input type="text" name="email" value={email} onChange={this.onChange}/>
+                  <input type="text" name="email"  onChange={this.onChange}/>
                   <label>Mail</label>
                 </div>
                 <div class="password">
-                  <input type="password" name="password" value={password} onChange={this.onChange}/>
+                  <input type="password" name="password"  onChange={this.onChange}/>
                   <label>Password</label>
                 </div>
                 <div class="submit">
-                  <button disabled={isInvalid} class="dark">Register</button>
+                  <button  class="dark">Register</button>
                 </div>
-                {error && <p>{error.message}</p>}
+                 { authError ? <p>{authError}</p> : null }
                 
               </form>
           </div>
@@ -163,14 +120,21 @@ class SignUpFormBase extends Component {
   }
 }
 
-const SignUpLink = () => (
-  <p>
-    Don't have an account? <Link to={"/signin"}>Sign Up</Link>
-  </p>
-);
+const mapStateToProps = (state) => {
+  return{
+    auth: state.firebase.auth,
+    authError: state.auth.authError
+  }
+}
 
-const SignUpForm = withRouter(withFirebase(SignUpFormBase));
+const mapDispatchToProps=(dispatch)=>{
 
-export default SignUpPage;
+  //console.log(state);
+  return{
+    signIn:(creds)=>dispatch(signIn(creds)),
+    signUp: (creds) => dispatch(signUp(creds))
+  }
+}
 
-export { SignUpForm, SignUpLink };
+export default connect(mapStateToProps,mapDispatchToProps)(SignUpFormBase);
+

@@ -8,38 +8,19 @@ import C9 from './class9/C9.js';
 import C10 from './class10/C10.js';
 import Navigation from "./navigation/Navigation.js";
 import QuizDetails from './class6/quizdetails.js'
-
+import CreateQuiz from './class6/createquiz.js'
+import AboutUs from './aboutus/aboutus.js'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import SignUpPage from './signin/Signin.js';
 import { withFirebase } from './firebase/index.js';
 class App extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      authUser: null,
-    };
-  }
-
-  componentDidMount() {
-    this.listener = this.props.firebase.auth.onAuthStateChanged(
-      authUser => {
-        authUser
-          ? this.setState({ authUser })
-          : this.setState({ authUser: null });
-      },
-    );
-  }
-
-  componentWillUnmount() {
-    this.listener();
-  }
   render(){
     return (
 
     <BrowserRouter>
-    
-      <Navigation authUser={this.state.authUser} />
+      <Navigation/>
+      
       <Switch>
       
       <Route path="/class6"  excat component={C6} />
@@ -48,6 +29,8 @@ class App extends Component {
       <Route path="/class9" excat  component={C9} />
       <Route path="/class10" excat component={C10} />
       <Route path="/signin" excat component={SignUpPage} />
+      <Route path="/quiz" excat component={CreateQuiz} />
+      <Route path="/about" component={AboutUs} />
       <Route path="/class/:id" excat component={QuizDetails}></Route>
         <Route exact path="/" excat component={Ide} />
         <Redirect to="/" />

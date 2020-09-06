@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+
 }
 .center {
   display: block;
@@ -13,11 +14,21 @@
 }
 .heading{
   padding-top:100px;
-	text-align: center;
-	font-family:Arial, Helvetica, sans-serif;
+  font-size: 60px;
+  text-align: center;
+  font-family:'Orbitron', sans-serif;
+    
+
+}
+.heading span{
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .desp{
   margin-bottom: 100px;
+  font-size: 30px;
+}
+.desp span{
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .howitworks{
   color: white;
@@ -26,14 +37,28 @@
   width: 50%;
 }
 .nvbar{
-
-	background-image: url("./a3.jpg");
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-	height: 2000px;
-	
+  
+  background-image: linear-gradient(rgba(255,255,255,0.3), rgba(0,0,0,0)),url("./a3.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  max-height: 2000px;
+  color:#fff;
+  font-family: 'Orbitron', sans-serif;
+  
+  
 } 
+@media only screen and (max-width: 1600px) {
+  .nvbar{
+  background-image:linear-gradient(rgba(255,255,255,0.3), rgba(0,0,0,0)), url("./a3.jpg");
+  background-attachment: scroll;
+  background-size: contain;
+  max-height: 1500px;
+  color: #fff;
+  background-color: 
+    }
+}
+
 .howimage{
  
 }
@@ -41,11 +66,13 @@
   background-color: #1897f2;
 }
 .crd{
-	margin-left: 100px;
-	margin-right: 100px;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+  margin-left: 100px;
+  margin-right: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  justify-content: space-around;
+  align-content: center;
 }
 
 .flex-container {
@@ -62,6 +89,8 @@
   box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
   font-family:Arial, Helvetica, sans-serif;
   text-align: center;
+  
+
     transition: 0.5s ease;
   cursor: pointer;
   margin:30px;
@@ -181,38 +210,39 @@
   font-size:13px;
 }
 .card-text ul {
-	margin: 5px;
+  margin: 5px;
   color: rgb(0,0,0);
   font-size:15px;
   font-weight: 300;
 }
 .card-text h2 {
-	color: rgb(0,0,0);
+  color: rgb(0,0,0);
   margin-top:0px;
   font-size:28px;
 }
 .card6:hover {
-	opacity: 1;
+  opacity: 1;
   transform: scale(1.15);
   box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
 }
 .card7:hover {
-	opacity: 1;
+  opacity: 1;
   transform: scale(1.15);
   box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
 }
 .card8:hover {
-	opacity: 1;
+  opacity: 1;
   transform: scale(1.15);
   box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
 }
 .card9:hover {
-	opacity: 1;
+  opacity: 1;
   transform: scale(1.15);
   box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
 }
 .card10:hover {
-	opacity: 1;
+  opacity: 1;
   transform: scale(1.15);
   box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
 }
+

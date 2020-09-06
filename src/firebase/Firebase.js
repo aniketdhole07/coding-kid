@@ -1,6 +1,6 @@
-import React from 'react'
-import app from 'firebase/app';
 
+import firebase from 'firebase';
+import 'firebase/firestore'
 import 'firebase/auth';
 
 const config = {
@@ -14,25 +14,9 @@ const config = {
   measurementId: "G-VZC98BEQSB"
 };
 
-class Firebase {
-  constructor() {
-    app.initializeApp(config);
-    this.auth = app.auth();
-  }
-
-  doCreateUserWithEmailAndPassword = (email, password) =>
-    this.auth.createUserWithEmailAndPassword(email, password);
-
-  doSignInWithEmailAndPassword = (email, password) =>
-    this.auth.signInWithEmailAndPassword(email, password);  
-
-  doSignOut = () => this.auth.signOut();  
-
-  doPasswordReset = email => this.auth.sendPasswordResetEmail(email);
- 
-  doPasswordUpdate = password =>
-    this.auth.currentUser.updatePassword(password);
-}
+    firebase.initializeApp(config);
+    firebase.firestore().settings({timestampsInSnapshots:true});
 
 
-export default Firebase
+
+export default firebase

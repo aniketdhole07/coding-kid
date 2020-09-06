@@ -1,0 +1,48 @@
+img{
+    width: 270px;
+    height: 300px;
+    opacity: 0.6;
+}
+
+.Row{
+    margin: 30px 30px;
+    background: #519872;
+}
+.cb{
+    width: 270px;
+}
+.ani{
+    background: #a2d5f2;
+        width: 270px;
+
+}
+
+h4{
+        width: 270px;
+}
+img:hover{
+    opacity: 1;
+}
+.shri{
+    background: #848ccf;
+        width: 270px;
+
+}
+.mg{
+    background: #24a19c;
+    width: 270px;
+}
+
+.box{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content:center;
+    margin: 30px;
+    padding: 20px;
+    justify-content: space-between;
+    justify-content: space-around;
+}
+.card{
+    margin: 20px
+}

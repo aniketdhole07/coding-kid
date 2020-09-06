@@ -1,57 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import "./Navigation.css";
 
-import SignOutButton from '../signin/Signout.js';
-import Navbar from 'react-bootstrap/Navbar'
-import {Nav} from 'react-bootstrap'
+import Navbar from 'react-bootstrap/Navbar';
+import {Nav} from 'react-bootstrap';
+import NavigationAuth from './NavigationAuth.js';
+import NavigationNonAuth from './NavigationNonAuth.js'
+import {connect} from 'react-redux';
+
+const Navigation = (props) => {
+  const { auth } = props;
+  // console.log(auth);
+  const links = auth.uid ? <NavigationAuth /> : <NavigationNonAuth />;
+
+  return (
+    
+      <div>
+        {links}
+      </div>
+    
+  )
+}
 
 
-const Navigation = ({ authUser }) => (
-  <div>{authUser ? <NavigationAuth /> : <NavigationNonAuth />}</div>
-);
 
-const NavigationAuth = () => (
-  <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark" class="bg-custom" fixed="top">
-    <Navbar.Brand href="/">Coding-Kid</Navbar.Brand>
-    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-    <Navbar.Collapse id="responsive-navbar-nav">
-      <Nav className="mr-auto">
-        <Nav.Link href="/">Home</Nav.Link>
-        <Nav.Link href="/about">About Us</Nav.Link>
-        
-      </Nav>
-      <Nav>
-        <Nav.Link href="/leaderboard">Leaderboard</Nav.Link>
-        <Nav.Link  href="/account">
-          Account
-        </Nav.Link>
-        <SignOutButton/>
-      </Nav>
-    </Navbar.Collapse>
-  </Navbar>
-);
 
-const NavigationNonAuth = () => (
- <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark" class="bg-custom" fixed="top">
-    <Navbar.Brand href="/">Coding-Kid</Navbar.Brand>
-    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-    <Navbar.Collapse id="responsive-navbar-nav">
-      <Nav className="mr-auto">
-        <Nav.Link href="/">Home</Nav.Link>
-        <Nav.Link href="/about">About Us</Nav.Link>
-        
-      </Nav>
-      <Nav>
-        <Nav.Link href="/leaderboard">Leaderboard</Nav.Link>
-        <Nav.Link  href="/signin">
-          SignIn/Register
-        </Nav.Link>
-        
-      </Nav>
-    </Navbar.Collapse>
-  </Navbar>
-);
 
-export default Navigation;
+const mapStateToProps = (state)=>{
+  console.log(state);
+  return{
+    auth: state.firebase.auth
+  }
+}
+export default connect(mapStateToProps)(Navigation);
 
 
