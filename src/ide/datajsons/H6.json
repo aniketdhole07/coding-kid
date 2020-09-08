@@ -1,6 +1,6 @@
 [
     {
-        "id":101,
+        "id":60,
       "title": "hard A LEGACY PUZZLE",
       "description": "A man left legacies to his three sons and to a hospital, amounting in all to $1,320.00. If he had left the hospital legacy also to his first son, that son would have received as much as the other two sons together. If he had left it to his second son, he would have received twice as much as the other two sons together. If he had left the hospital legacy to his third son, he would have re-ceived then thrice as much as the first son andsecond son together. Find the amount of third son.",
       "answer":"385",
@@ -9,7 +9,7 @@
       "type":"e"
     },
     {
-        "id":102,
+        "id":61,
       "title": "hard WORKING ALONE",
       "description": "Alfred and Bill together can do a piece of work in twenty-four days. If Alfred can do only two-thirds as much as Bill, howlong will it Alfred to do the work alone?",
       "answer": "60",
@@ -19,7 +19,7 @@
       
     },
     {
-        "id":103,
+        "id":62,
       "title": "hard A LEGACY PUZZLE",
       "description": "A man left legacies to his three sons and to a hospital, amounting in all to $1,320.00. If he had left the hospital legacy also to his first son, that son would have received as much as the other two sons together. If he had left it to his second son, he would have received twice as much as the other two sons together. If he had left the hospital legacy to his third son, he would have re-ceived then thrice as much as the first son andsecond son together. Find the amount of third son.",
       "answer":"385",
@@ -28,7 +28,7 @@
       "type":"e"
     },
     {
-        "id":104,
+        "id":63,
       "title": "hard WORKING ALONE",
       "description": "Alfred and Bill together can do a piece of work in twenty-four days. If Alfred can do only two-thirds as much as Bill, howlong will it Alfred to do the work alone?",
       "answer": "60",

@@ -3,11 +3,14 @@ import {Card,Button} from 'react-bootstrap'
 import ani from "./img/aniket.jpeg"
 import shri from "./img/shri.jpeg"
 import mohit from "./img/mohit.jpeg"
+import harsh from "./img/harsh.jpeg"
+import parth from "./img/parth.jpg"
 import "./aboutus.css"
 const AboutUs=()=>{
 	return(
            <div className="Row box">
            <div className="card">
+
            <Card> 
            <div> 
 			<img src={ani} alt="aniket" />
@@ -25,9 +28,12 @@ const AboutUs=()=>{
                </div>
             </Card.Body>
            </Card>
+
            </div>
            <div className="card">
            <Card> 
+
+
                    <div> 
 			<img src={shri} alt="Shrishail" />
            </div>
@@ -48,6 +54,8 @@ const AboutUs=()=>{
            </div>
            <div className="card">
             <Card> 
+
+
                    <div> 
 			<img src={mohit} alt="Mohit" />
            </div>
@@ -66,6 +74,48 @@ const AboutUs=()=>{
             </Card.Body>
            </Card>
           </div>
+          <div className="card">
+          <Card> 
+
+           <div> 
+      <img src={harsh} alt="Harsh" />
+           </div> 
+            <Card.Header className="cb"> <h4>Harsh Singhal</h4></Card.Header>
+            <Card.Body className="ani"> 
+               <div>
+                 <h6>Student At PCCOE </h6>
+                 <h6> Contact: </h6>
+                 <div className="row">
+                 <a className="offset-2" href='https://www.linkedin.com/in/harsh-singhal-008a091a9'><i className="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
+                 <a className="offset-2" href='https://github.com/harshs-debugger'><i className="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
+                
+                 </div>
+               </div>
+            </Card.Body>
+           </Card>
+           </div>
+           
+
+     <div className="card">
+     <Card> 
+           <div> 
+      <img src={parth} alt="Parth" />
+           </div> 
+            <Card.Header className="cb"> <h4>Parth Shrivastava </h4></Card.Header>
+            <Card.Body className="ani"> 
+               <div>
+                 <h6>Student At PCCOE </h6>
+                 <h6> Contact: </h6>
+                 <div className="row">
+                 <a className="offset-2" href='https://in.linkedin.com/in/parth-shrivastava-a68a78178'><i className="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
+                 <a className="offset-2" href='https://github.com/parth30034'><i className="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
+                <a className="offset-2" href='https://www.instagram.com/parth_s202/'><i className="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+                 </div>
+               </div>
+            </Card.Body>
+           </Card>
+           </div>
+            
           </div>
      
 		)

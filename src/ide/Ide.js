@@ -119,10 +119,11 @@ export default function PersistentDrawerRight() {
 
 
      </div>
+     <h3>How It Works</h3>
      <div className="howitworks">
-          <h3>How It Works</h3>
           
-          <img class="howimg" src={how}  />
+          
+          
           </div>
       </div>
       </div>

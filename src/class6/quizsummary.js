@@ -1,7 +1,7 @@
 import React from 'react'
 import "./C6.css"
 import {Card,Tooltip,Button,OverlayTrigger} from 'react-bootstrap'
-const QuizSummary = ({quiz}) => {
+const QuizSummary = ({quiz,solve}) => {
   function handletooltip(props)
   {
   	return(
@@ -10,8 +10,9 @@ const QuizSummary = ({quiz}) => {
   		</Tooltip>
   		)
   }
+  console.log(quiz,solve);
     return (
-
+        <div className={solve ? 'background-green':'background-white' } >
          <OverlayTrigger placement="top"
           overlay={handletooltip}
          >
@@ -25,6 +26,7 @@ const QuizSummary = ({quiz}) => {
                 </Card>
 
         </OverlayTrigger>
+        </div>
     )
 }
 

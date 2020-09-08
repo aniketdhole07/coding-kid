@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{ Component}from 'react'
 import quizesE from '../ide/datajsons/E6.json'
 import quizesM from '../ide/datajsons/M6.json'
 import quizesH from '../ide/datajsons/H6.json'
@@ -11,18 +11,18 @@ import { Container, Row,Col,Nav} from 'react-bootstrap'
 import { firestoreConnect} from  'react-redux-firebase'
 import { compose } from 'redux'
 import "./C6.css"
-function C6({projects}) {
+import {Card,Tooltip,Button,OverlayTrigger} from 'react-bootstrap'
 
 
-  var anyBoxesChecked = [];
-  var numeroPerguntas = 500;     
-  for (var i = 0; i < numeroPerguntas; i++) {
-    anyBoxesChecked.push(false);
-  }
-  console.log(
-  {projects}
-);
 
+class C6 extends Component {
+  
+ 
+  render(){
+
+    
+  const {solve,star}= this.props;
+  console.log("1",solve);
   return (
     <div>
     
@@ -48,7 +48,19 @@ function C6({projects}) {
               {quizesE.map(quiz=>{
                 return(
                    <Link to={"/class/"+quiz.id}>
-                     <QuizSummary quiz={quiz}></QuizSummary>
+                       <div className={solve[quiz.id] ? 'background-green':'background-white' } >
+                      
+                      <Card>
+                      <Card.Header>{quiz.title}
+                      <div className={star[quiz.id] ? 'rating-yellow rating':'rating-white rating' }>
+                         <span class="star">☆</span>
+                      </div>   
+
+                      </Card.Header>
+                      </Card>
+
+                      
+                      </div>
                    </Link>
                 )
               })}
@@ -56,18 +68,42 @@ function C6({projects}) {
             <Tab.Pane eventKey="second">
               {quizesM.map(quiz=>{
                 return(
-                   <Link to={"/class/"+quiz.id}>
-                     <QuizSummary quiz={quiz}></QuizSummary>
+                  <Link to={"/class/"+quiz.id}>
+                       <div className={solve[quiz.id] ? 'background-green':'background-white' } >
+                       
+                      <Card>
+                      <Card.Header>{quiz.title}
+                      <div className={star[quiz.id] ? 'rating-yellow rating':'rating-white rating' }>
+                         <span onclick="myFunction()" class="star">☆</span>
+                      </div>   
+
+                      </Card.Header>
+                              </Card>
+
+                      
+                      </div>
                    </Link>
                 )
               })}
             </Tab.Pane>
           
           <Tab.Pane eventKey="third">
-              {quizesH.map(quiz1=>{
+              {quizesH.map(quiz=>{
                 return(
-                   <Link to={"/class/"+quiz1.id}>
-                     <QuizSummary quiz={quiz1}></QuizSummary>
+                   <Link to={"/class/"+quiz.id}>
+                       <div className={solve[quiz.id] ? 'background-green':'background-white' } >
+                       
+                      <Card>
+                      <Card.Header>{quiz.title}
+                      <div className={star[quiz.id] ? 'rating-yellow rating':'rating-white rating' }>
+                         <span onclick="myFunction()" class="star">☆</span>
+                      </div>   
+
+                      </Card.Header>
+                              </Card>
+
+                     
+                      </div>
                    </Link>
                 )
               })}
@@ -79,20 +115,9 @@ function C6({projects}) {
      
 </div>
     
-  )
+  );
+}
 }
 
-const mapStateToProps=(state)=>{
 
-  //console.log(state);
-  return{
-    projects: state.firestore
-  }
-}
-export default compose(
-
-firestoreConnect([
-    { collection: 'quiz' }
-  ]),
-  connect(mapStateToProps)
-)(C6)
+export default C6

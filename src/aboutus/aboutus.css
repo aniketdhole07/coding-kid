@@ -1,12 +1,13 @@
 img{
     width: 270px;
     height: 300px;
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 .Row{
     margin: 30px 30px;
-    background: #519872;
+    background: #2180ed,;
+    background: linear-gradient(to bottom, #2180ed, #F64C72);
 }
 .cb{
     width: 270px;
@@ -38,11 +39,13 @@ img:hover{
     flex-wrap: wrap;
     flex-direction: row;
     align-content:center;
-    margin: 30px;
+    
     padding: 20px;
     justify-content: space-between;
     justify-content: space-around;
 }
 .card{
-    margin: 20px
+    
+    margin-top:30px;
+    margin-bottom:30px;
 }

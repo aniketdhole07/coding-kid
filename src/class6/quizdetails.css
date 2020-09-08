@@ -1,7 +1,4 @@
-body {
-  background-color: white;
-  padding-top: 70px;
-}
+
 
 .codebutton{
 	background-color: #4CAF50; /* Green */
@@ -13,4 +10,94 @@ body {
   position: absolute;
   right: 0;
   font-size: 16px;
+}
+
+body {
+  
+  padding-top: 70px;
+} 
+#parent {
+  width: 50%;
+  height: 600px;
+  margin: 100px auto 0;
+  position: relative;
+}
+#body {
+  width: 100%;
+  height: 600px;
+/*   border: solid 3px #888; */
+  background-color: #FFFAED;
+  left: 0;
+  z-index: 0;
+  position: relative;
+  
+  transition: .5s;
+}
+@keyframes opening {
+    0%   {width: 100%;}
+    100% {width: 70%;}
+}
+#body.open {
+  position: absolute;
+  width: 70%;
+  
+  animation-name: opening;
+  animation-duration: .5s;
+}
+@keyframes slide-out {
+    0%   {width: 30%;}
+    100% {width: 0%;}
+}
+#drawer {
+  width: 0%;
+  height: 100%;
+  background-color: rgba(124, 125, 136, 0.67);
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  animation-name: slide-out;
+  animation-duration: .45s;
+}
+@keyframes slide-in {
+    0%   {width: 0%;}
+    100% {width: 30%;}
+}
+#drawer.open {
+  animation-name: slide-in;
+  animation-duration: .5s;
+  animation-delay: .5s;
+  -webkit-animation-fill-mode: forwards;
+}
+#drawer-tab {
+  height: 50px;
+  width: 50px;
+  background-color: #44ac92;
+  position: absolute;
+}
+#drawer-tab:hover {
+  cursor: pointer;
+}
+.bar {
+  height: 10%;
+  width: 50%;
+  background-color: #999;
+  border: solid 1px;
+  margin: 20px auto;
+  position: relative;
+}
+.bar:before,
+.bar:after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  border: solid 1px;
+  background-color: inherit;
+  position: absolute;
+}
+.bar:before {
+  top: -.625rem;
+}
+.bar:after {
+  top: .625rem;
 }

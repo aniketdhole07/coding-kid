@@ -1,0 +1,32 @@
+.top,
+.bottom {
+  cursor: pointer;
+  height: 100%;
+  width: 350px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.top {
+  background-color: tomato;
+  transition: all .3s;
+  z-index: 10;
+}
+
+.bottom {
+  background-color: cyan;
+}
+
+.top-minimized {
+  transition: all .3s;
+  width: 50px;
+}
+
+
+
+#container {
+  width: 100px;
+  height: 100vh;
+  position: relative;
+}

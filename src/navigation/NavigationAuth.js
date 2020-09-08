@@ -21,7 +21,10 @@ const NavigationAuth = (props) => (
         <Nav.Link  href="/account">
           Account
         </Nav.Link>
-        <a onClick={props.signOut}>Log Out</a>
+        <Nav.Link  onClick={props.signOut}>
+          Log Out
+        </Nav.Link>
+        
       </Nav>
     </Navbar.Collapse>
   </Navbar>

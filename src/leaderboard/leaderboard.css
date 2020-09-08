@@ -1,0 +1,70 @@
+@import 'https://fonts.googleapis.com/css?family=Ubuntu';
+
+
+
+.all {
+	min-height: 100%;
+  min-width: 1024px;
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+	
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+	font-family: 'Ubuntu', 'Microsoft JhengHei', Arial, sans-serif;
+	letter-spacing: 1px;
+	background: #2c88f2;
+	background: -webkit-linear-gradient(to bottom, #2180ed, #F64C72);
+	background: linear-gradient(to bottom, #2180ed, #F64C72);
+	text-align: center;
+}
+.lb {
+	background-color: #123;
+	color: #eee;
+	width: 600px;
+	border-radius: 5px;
+	margin-top:10px;
+	box-shadow: 2px 5px 15px rgba(17, 34, 51, 0.5);
+	text-align: center;
+	display: inline-block;
+	vertical-align: middle;
+}
+@media only screen and (max-width: 700px) {
+  .all {
+	min-height: 100%;
+  min-width: 200px;
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+	
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+	font-family: 'Ubuntu', 'Microsoft JhengHei', Arial, sans-serif;
+	letter-spacing: 1px;
+	background: #2c88f2;
+	background: -webkit-linear-gradient(to bottom, #2180ed, #F64C72);
+	background: linear-gradient(to bottom, #2180ed, #F64C72);
+	text-align: center;
+}
+    
+.lb {
+	background-color: #123;
+	color: #eee;
+	width: 300px;
+	border-radius: 5px;
+	margin-top:10px;
+	box-shadow: 2px 5px 15px rgba(17, 34, 51, 0.5);
+	text-align: center;
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: 30px;
+}
+
+}
+

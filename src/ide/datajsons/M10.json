@@ -1,7 +1,7 @@
 [
     
     {
-        "id":201,
+        "id":30,
       "title": "WORKING ALONE1",
       "description": "Alfred and Bill together can do a piece of work in twenty-four days. If Alfred can do only two-thirds as much as Bill, howlong will it Alfred to do the work alone?",
       "answer": "60",
@@ -12,7 +12,7 @@
     },
   
     {
-        "id":202,
+        "id":31,
       "title": "WORKING ALONE2",
       "description": "Alfred and Bill together can do a piece of work in twenty-four days. If Alfred can do only two-thirds as much as Bill, howlong will it Alfred to do the work alone?",
       "answer": "60",
@@ -23,7 +23,7 @@
     },
    
     {
-        "id":203,
+        "id":32,
       "title": "WORKING ALONE3",
       "description": "Alfred and Bill together can do a piece of work in twenty-four days. If Alfred can do only two-thirds as much as Bill, howlong will it Alfred to do the work alone?",
       "answer": "60",

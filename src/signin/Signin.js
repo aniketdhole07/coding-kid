@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+ import React, { Component } from 'react';
+import { Link, withRouter,Redirect } from 'react-router-dom';
 import {connect} from 'react-redux';
 import {signIn} from '../store/authAction.js'
 import {signUp} from '../store/authAction.js'
 import { withFirebase } from '../firebase';
 import "./Signin.css";
 import $ from 'jquery';
-
-
-
 
 
 class SignUpFormBase extends Component {
@@ -25,12 +22,13 @@ class SignUpFormBase extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    this.props.signUp(this.state)
+    this.props.signUp(this.state);
   };
   
   onSignin = event => {
     event.preventDefault();
-    this.props.signIn(this.state)
+    this.props.signIn(this.state);
+
   };
 
   onChange = event => {
@@ -41,7 +39,7 @@ class SignUpFormBase extends Component {
   render() {
 
     const { auth,authError}=this.props;
-    if (auth.uid) return <Link to='/' /> 
+    if (auth.uid) return <Redirect to='/' /> 
     $(document).ready(function(){
       $(".veen .rgstr-btn button").click(function(){
         $('.veen .wrapper').addClass('move');
@@ -87,7 +85,7 @@ class SignUpFormBase extends Component {
                 <div class="submit">
                   <button  class="dark">Login</button>
                 </div>
-                 { authError ? <p>{authError}</p> : null }
+                 { authError ? <p>{authError}</p> : <script> return <Link to='/' /> </script>  }
               </form>
 
               <form id="register" tabindex="502" onSubmit={this.onSubmit}>
