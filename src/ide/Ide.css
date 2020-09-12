@@ -31,37 +31,46 @@
   background-color: rgba(0, 0, 0, 0.4);
 }
 .howitworks{
-  color: white;
-   display: block;
-  align-self: center;
-  width: 50%;
+  width:100%;
+  height:450px;
+  background-image: linear-gradient(rgba(255,255,255,0.3), rgba(0,0,0,0)),url("./how.png");
+
+  background-size: cover;
 }
+
 .nvbar{
   
   background-image: linear-gradient(rgba(255,255,255,0.3), rgba(0,0,0,0)),url("./a3.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  max-height: 2000px;
+  max-height: 3000px;
   color:#fff;
   font-family: 'Orbitron', sans-serif;
   
   
 } 
-@media only screen and (max-width: 1600px) {
+@media only screen and (max-width: 600px) {
   .nvbar{
   background-image:linear-gradient(rgba(255,255,255,0.3), rgba(0,0,0,0)), url("./a3.jpg");
   background-attachment: scroll;
   background-size: contain;
-  max-height: 1500px;
+  max-height: 4000px;
   color: #fff;
-  background-color: 
+  background: -webkit-linear-gradient(to bottom, #2180ed, #F64C72);
+  background: linear-gradient(to bottom, #2180ed, #F64C72);
     }
+    .heading{
+  padding-top:20px;
+  font-size: 60px;
+  text-align: center;
+  font-family:'Orbitron', sans-serif;
+    
+
+}
 }
 
-.howimage{
- 
-}
+
 .bg-custom{
   background-color: #1897f2;
 }
