@@ -26,6 +26,9 @@ export const signOut = () => {
 export const signUp = (newUser) => {
 	var star = [];
 	var solved = [];
+  var solveH=[];
+  var solveM=[];
+  var solveE=[];
 	var numberofquizes = 500;     
 	for (var i = 0; i < numberofquizes; i++) {
 	star.push(false);
@@ -39,12 +42,17 @@ export const signUp = (newUser) => {
       newUser.email, 
       newUser.password
     ).then(resp => {
+
       return firestore.collection('users').doc(resp.user.uid).set({
         name: newUser.name,
         star:star,
-        solved:solved
+        solved:solved,
+        solveH:solveH,
+        solveM:solveM,
+        solveE:solveE
       });
     }).then(() => {
+      //firebase.auth().sendPasswordResetEmail(newUser.email);
       dispatch({ type: 'SIGNUP_SUCCESS' });
     }).catch((err) => {
       dispatch({ type: 'SIGNUP_ERROR', err});

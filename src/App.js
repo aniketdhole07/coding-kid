@@ -27,6 +27,10 @@ class App extends Component {
   console.log(data);
   var star = [];
   var solve= [];
+  var solveH=[];
+  var solveM=[];
+  var solveE=[];
+  var name='';
   var numberofquizes = 500;     
   for (var i = 0; i < numberofquizes; i++) {
   star.push(false);
@@ -36,8 +40,12 @@ class App extends Component {
   {
     if(uid === data[key]["id"])
     {
-      solve=data[key]["solved"]
-      star=data[key]["star"]
+      solve=data[key]["solved"];
+      star=data[key]["star"];
+      name=data[key]["name"];
+      solveH=data[key]["solveH"];
+      solveM=data[key]["solveM"];
+      solveE=data[key]["solveE"];
     }
   }
   
@@ -56,10 +64,10 @@ class App extends Component {
       <Route path="/class10" excat component={C10} />
       <Route path="/signin" excat component={SignUpPage} />
       <Route path="/leaderboard" excat render={() => <Leaderboard data={data} />} />
-      <Route path="/account" excat render={() => <Account data={data} />} />
+      <Route path="/account" excat render={() => <Account name={name} solveE={solveE} solveM={solveM} solveH={solveH} />} />
       <Route path="/quiz" excat component={CreateQuiz} />
       <Route path="/about" component={AboutUs} />
-      <Route path="/class/:id" excat render={props => <QuizDetails {...props} solve={solve} uid={uid}/>}></Route>
+      <Route path="/class/:id" excat render={props => <QuizDetails {...props} solve={solve} solveE={solveE} solveM={solveM} solveH={solveH} uid={uid}/>}></Route>
         <Route exact path="/" excat component={Ide} />
         <Redirect to="/" />
       </Switch>

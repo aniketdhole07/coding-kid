@@ -25,7 +25,7 @@ import { compose } from 'redux'
 import "./quizdetails.css";
 import $ from 'jquery';
 import {updateSolved} from "../store/solvedAction.js";
-const drawerWidth = 800;
+import Idecontainer from './idecontainer.js';
 
 
 class QuizDetails extends Component{
@@ -37,7 +37,10 @@ class QuizDetails extends Component{
     id:this.props.match.params.id,
     quiz:'',
     uid:'',
-    solve:''
+    solve:'',
+    solveH:'',
+    solveM:'',
+    solveE:''
     
   } 
   onSignin = event => {
@@ -46,7 +49,10 @@ class QuizDetails extends Component{
       
       this.setState({
         uid:this.props.uid,
-        solve:this.props.solve
+        solve:this.props.solve,
+        solveH:this.props.solveH,
+        solveM:this.props.solveM,
+        solveE:this.props.solveE
       }, () => {
         console.log(this.state,this.props);
         
@@ -67,6 +73,8 @@ class QuizDetails extends Component{
   onChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
+   
+  
   render(){
   
  
@@ -87,11 +95,8 @@ class QuizDetails extends Component{
   }
   
   
-
- 
-
   return(
-   <div>
+    <div>
       
            <div className="card container quiz bg">
           <div className="card-content">
@@ -124,6 +129,8 @@ class QuizDetails extends Component{
           
         
       
+      
+      <Idecontainer/>
       </div>
   );
 }

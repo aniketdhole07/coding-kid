@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {signIn} from '../store/authAction.js'
 import {signUp} from '../store/authAction.js'
 import { withFirebase } from '../firebase';
-import "./Signin.css";
+import "./Signin.sass";
 import $ from 'jquery';
 
 
@@ -30,7 +30,7 @@ class SignUpFormBase extends Component {
     this.props.signIn(this.state);
 
   };
-
+ 
   onChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
@@ -40,26 +40,101 @@ class SignUpFormBase extends Component {
 
     const { auth,authError}=this.props;
     if (auth.uid) return <Redirect to='/' /> 
-    $(document).ready(function(){
-      $(".veen .rgstr-btn button").click(function(){
-        $('.veen .wrapper').addClass('move');
-        $('.body').css('background','#f7ae40');
-        $(".veen .login-btn button").removeClass('active');
-        $(this).addClass('active');
+    {/*$(document).ready(function(){
+          $(".veen .rgstr-btn button").click(function(){
+            $('.veen .wrapper').addClass('move');
+            $('.body').css('background','#f7ae40');
+            $(".veen .login-btn button").removeClass('active');
+            $(this).addClass('active');
+    
+          });
+          $(".veen .login-btn button").click(function(){
+            $('.veen .wrapper').removeClass('move');
+            $('.body').css('background','#c5ff31');
+            $(".veen .rgstr-btn button").removeClass('active');
+            $(this).addClass('active');
+          });
+        });*/}
+    window.onload=function(){
+      const signupButton = document.getElementById('signup-button'),
+      loginButton = document.getElementById('login-button'),
+      userForms = document.getElementById('user_options-forms')
 
-      });
-      $(".veen .login-btn button").click(function(){
-        $('.veen .wrapper').removeClass('move');
-        $('.body').css('background','#c5ff31');
-        $(".veen .rgstr-btn button").removeClass('active');
-        $(this).addClass('active');
-      });
-    });
+     
+      signupButton.addEventListener('click', () => {
+        userForms.classList.remove('bounceRight')
+        userForms.classList.add('bounceLeft')
+      }, false)
+
+      
+      loginButton.addEventListener('click', () => {
+        userForms.classList.remove('bounceLeft')
+        userForms.classList.add('bounceRight')
+      }, false)
+    }  
+    
+     
     return (
     <div>
-        <script  src="https://code.jquery.com/jquery-3.1.1.min.js"  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="  crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" ></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+    
+     <section class="user">
+          <div class="user_options-container">
+            <div class="user_options-text">
+              <div class="user_options-unregistered">
+                <h2 class="user_unregistered-title">Don't have an account?</h2>
+                <button class="user_unregistered-signup" id="signup-button">Sign up</button>
+              </div>
+
+              <div class="user_options-registered">
+                <h2 class="user_registered-title">Already an user?</h2>
+                 <button class="user_registered-login" id="login-button">Login</button>
+              </div>
+            </div>
+            
+            <div class="user_options-forms" id="user_options-forms">
+              <div class="user_forms-login">
+                <h2 class="forms_title">Login</h2>
+                <form class="forms_form" onSubmit={this.onSignin}>
+                  <fieldset class="forms_fieldset">
+                    <div class="forms_field">
+                      <input name="email_si" id="email_si" onChange={this.onChange} type="email" placeholder="Email" class="forms_field-input" required autofocus />
+                    </div>
+                    <div class="forms_field">
+                      <input name="password_si" id="password_si" onChange={this.onChange} type="password" placeholder="Password" class="forms_field-input" required />
+                    </div>
+                  </fieldset>
+                  <div class="forms_buttons submit">
+            
+                    <input type="submit" value="Log In" class="forms_buttons-action"/>
+                  </div>
+                </form>
+              </div>
+              <div class="user_forms-signup">
+                <h2 class="forms_title">Sign Up</h2>
+                <form class="forms_form" onSubmit={this.onSubmit}>
+                  <fieldset class="forms_fieldset">
+                    <div class="forms_field">
+                      <input type="text" name="name"  onChange={this.onChange} placeholder="Full Name" class="forms_field-input" required />
+                    </div>
+                    <div class="forms_field">
+                      <input type="email" name="email"  onChange={this.onChange} placeholder="Email" class="forms_field-input" required />
+                    </div>
+                    <div class="forms_field">
+                      <input type="password" name="password"  onChange={this.onChange} placeholder="Password" class="forms_field-input" required />
+                    </div>
+                  </fieldset>
+                  <div class="forms_buttons submit">
+                    <input type="submit" value="Sign up" class="forms_buttons-action"/>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+    {/*}
         <div class="body">
           <div class="veen">
             <div class="login-btn splits">
@@ -112,7 +187,7 @@ class SignUpFormBase extends Component {
           </div>  
         </div>
 
-    
+    */}
     </div>
     );
   }

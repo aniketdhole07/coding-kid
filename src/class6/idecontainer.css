@@ -1,0 +1,64 @@
+.pulsing {
+	 width: 99%;
+	 height: 99%;
+	 border-radius: 50px;
+	 z-index: 1;
+	 position: relative;
+}
+ .pulsing:before, .pulsing:after {
+	 width: 100%;
+	 height: 100%;
+	 border: inherit;
+	 top: 0;
+	 left: 0;
+	 z-index: 0;
+	 background: #fff;
+	 border-radius: inherit;
+	 animation: pulsing 2.5s linear infinite;
+}
+ .pulsing:after {
+	 animation: pulsing1 2.5s linear infinite;
+}
+ @keyframes pulsing {
+	 0% {
+		 opacity: 1;
+		 transform: scaleY(1) scaleX(1);
+	}
+	 20% {
+		 opacity: 0.5;
+	}
+	 70% {
+		 opacity: 0.2;
+		 transform: scaleY(1.8) scaleX(1.4);
+	}
+	 80% {
+		 opacity: 0;
+		 transform: scaleY(1.8) scaleX(1.4);
+	}
+	 90% {
+		 opacity: 0;
+		 transform: scaleY(1) scaleX(1);
+	}
+}
+ @keyframes pulsing1 {
+	 0% {
+		 opacity: 1;
+		 transform: scaleY(1) scaleX(1);
+	}
+	 20% {
+		 opacity: 0.5;
+	}
+	 70% {
+		 opacity: 0.2;
+		 transform: scaleY(1.3) scaleX(1.15);
+	}
+	 80% {
+		 opacity: 0;
+		 transform: scaleY(1.3) scaleX(1.15);
+	}
+	 90% {
+		 opacity: 0;
+		 transform: scaleY(1) scaleX(1);
+	}
+}
+ 

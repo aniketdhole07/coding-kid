@@ -50,7 +50,7 @@
   
   
 } 
-@media only screen and (max-width: 1600px) {
+@media only screen and (max-width: 600px) {
   .nvbar{
   background-image:linear-gradient(rgba(255,255,255,0.3), rgba(0,0,0,0)), url("./a3.jpg");
   background-attachment: scroll;

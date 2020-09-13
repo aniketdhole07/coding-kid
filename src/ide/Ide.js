@@ -26,8 +26,7 @@ import { Container, Row,Nav} from 'react-bootstrap'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 
 import how from "./how.png";
-
-
+import ContactUs from  '../contactus/contactus.js'
 
 export default function PersistentDrawerRight() {
   
@@ -119,12 +118,10 @@ export default function PersistentDrawerRight() {
 
 
      </div>
-     <h3>How It Works</h3>
-     <div className="howitworks">
-          
-          
-          
-          </div>
+    
+       <div>
+           <ContactUs />
+         </div>    
       </div>
       </div>
   );
