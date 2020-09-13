@@ -42,20 +42,22 @@ export const signUp = (newUser) => {
       newUser.email, 
       newUser.password
     ).then(resp => {
-
+       firebase.auth().sendPasswordResetEmail(newUser.email);
+      firebase.auth().currentUser.sendEmailVerification();
       return firestore.collection('users').doc(resp.user.uid).set({
         name: newUser.name,
         star:star,
         solved:solved,
+        email:newUser.email,
         solveH:solveH,
         solveM:solveM,
         solveE:solveE
       });
     }).then(() => {
-      //firebase.auth().sendPasswordResetEmail(newUser.email);
       dispatch({ type: 'SIGNUP_SUCCESS' });
     }).catch((err) => {
       dispatch({ type: 'SIGNUP_ERROR', err});
     });
   }
+
 }
