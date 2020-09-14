@@ -1,0 +1,126 @@
+$outline-width: 0;
+$break-point: 500px;
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  font-family: lato;
+
+}
+
+$gray-base:     #999999;
+$brand-primary: #3498DB; //Zen Blue
+.steps-section{
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.section-header {
+  color: $brand-primary;
+  font-weight: 400;
+  font-size: 1.4em;
+}
+
+
+.steps-header {
+  @extend .section-header;
+  margin-bottom: 20px;  
+  text-align: center;
+}
+.steps-timeline {
+  outline: 1px dashed rgba(red, $outline-width);
+  
+  @media screen and (max-width: $break-point) {
+    border-left: 2px solid $brand-primary;
+    margin-left: 25px;
+  }
+  
+  @media screen and (min-width: $break-point) {
+    border-top: 2px solid $brand-primary;
+    padding-top: 20px;
+    margin-top: 40px;
+    margin-left: 16.65%;
+    margin-right: 16.65%;
+  }
+  
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+.steps-one,
+.steps-two,
+.steps-three {
+  outline: 1px dashed rgba(green, $outline-width);
+  
+  @media screen and (max-width: $break-point) {
+    margin-left: -25px;
+  }
+  
+  @media screen and (min-width: $break-point) {
+    float: left;
+    width: 33%;  
+    margin-top: -50px;
+  }
+}
+.steps-one,
+.steps-two {
+  @media screen and (max-width: $break-point) {
+    padding-bottom: 40px;
+  }
+}
+.steps-one {
+  @media screen and (min-width: $break-point) {
+    margin-left: -16.65%;
+    margin-right: 16.65%;
+  }
+}
+.steps-two {
+  
+}
+.steps-three {
+  @media screen and (max-width: $break-point) {
+    margin-bottom: -100%;
+  }
+  @media screen and (min-width: $break-point) {
+    margin-left: 16.65%;
+    margin-right: -16.65%;
+  }
+}
+
+.steps-img {
+  display: block;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 30%; 
+  opacity: 1;
+  @media screen and (max-width: $break-point) {
+    float: left;
+    margin-right: 20px;
+  }
+}
+
+.steps-name,
+.steps-description {
+  margin: 0;
+}
+.steps-name {
+  @extend .section-header;
+  
+  @media screen and (min-width: $break-point) {
+    text-align: center;
+  }
+}
+.steps-description {
+  overflow: hidden;
+  
+  @media screen and (min-width: $break-point) {
+    text-align: center;
+  }
+}

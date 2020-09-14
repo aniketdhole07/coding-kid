@@ -8,7 +8,7 @@ import C9 from './class9/C9.js';
 import C10 from './class10/C10.js';
 import Navigation from "./navigation/Navigation.js";
 import QuizDetails from './class6/quizdetails.js'
-import CreateQuiz from './class6/createquiz.js'
+
 import AboutUs from './aboutus/aboutus.js'
 import Leaderboard from './leaderboard/leaderboard.js'
 import NavDropdown from 'react-bootstrap/NavDropdown'
@@ -24,7 +24,7 @@ class App extends Component {
   render(){
 
   const {data,uid}=this.props;
-  console.log(data);
+  //console.log(data);
   var star = [];
   var solve= [];
   var solveH=[];
@@ -65,7 +65,7 @@ class App extends Component {
       <Route path="/signin" excat component={SignUpPage} />
       <Route path="/leaderboard" excat render={() => <Leaderboard data={data} />} />
       <Route path="/account" excat render={() => <Account name={name} solveE={solveE} solveM={solveM} solveH={solveH} />} />
-      <Route path="/quiz" excat component={CreateQuiz} />
+      
       <Route path="/about" component={AboutUs} />
       <Route path="/class/:id" excat render={props => <QuizDetails {...props} solve={solve} solveE={solveE} solveM={solveM} solveH={solveH} uid={uid}/>}></Route>
         <Route exact path="/" excat component={Ide} />

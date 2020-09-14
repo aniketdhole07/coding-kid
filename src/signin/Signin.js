@@ -5,6 +5,7 @@ import {signIn} from '../store/authAction.js'
 import {signUp} from '../store/authAction.js'
 import { withFirebase } from '../firebase';
 import "./Signin.sass";
+import "./Signin.css";
 import $ from 'jquery';
 
 
@@ -22,11 +23,13 @@ class SignUpFormBase extends Component {
 
   onSubmit = event => {
     event.preventDefault();
+    
     this.props.signUp(this.state);
   };
   
   onSignin = event => {
     event.preventDefault();
+    //console.log("hello1");
     this.props.signIn(this.state);
 
   };
@@ -40,7 +43,7 @@ class SignUpFormBase extends Component {
 
     const { auth,authError}=this.props;
     if (auth.uid) return <Redirect to='/' /> 
-    {/*$(document).ready(function(){
+    $(document).ready(function(){
           $(".veen .rgstr-btn button").click(function(){
             $('.veen .wrapper').addClass('move');
             $('.body').css('background','#f7ae40');
@@ -54,7 +57,7 @@ class SignUpFormBase extends Component {
             $(".veen .rgstr-btn button").removeClass('active');
             $(this).addClass('active');
           });
-        });*/}
+        });
     window.onload=function(){
       const signupButton = document.getElementById('signup-button'),
       loginButton = document.getElementById('login-button'),
@@ -75,9 +78,57 @@ class SignUpFormBase extends Component {
     
      
     return (
-    <div>
+    <div class="al">
 
-    
+    <div class="veen">
+            <div class="login-btn splits">
+              <p>Already an user?</p>
+              <button class="active">Login</button>
+            </div>
+            <div class="rgstr-btn splits">
+              <p>Don't have an account?</p>
+              <button>Register</button>
+            </div>
+
+            <div class="wrapper">
+              <form id="login" tabindex="500" onSubmit={this.onSignin}>
+                <h3>Login</h3>
+                <div class="mail">
+                  <input name="email_si" id="email_si" onChange={this.onChange} type="text" />
+                  <label>Mail or Username</label>
+                </div>
+                <div class="passwd">
+                  <input name="password_si" id="password_si" onChange={this.onChange} type="password" />
+                  <label>Password</label>
+                </div>
+                <div class="submit">
+                  <button  class="dark">Login</button>
+                </div>
+                 { authError ? <p>{authError}</p> : <script> return <Link to='/' /> </script>  }
+              </form>
+
+              <form id="register" tabindex="502" onSubmit={this.onSubmit}>
+                <h3>Register</h3>
+                <div class="name">
+                  <input type="text" name="name"  onChange={this.onChange} />
+                  <label>Full Name</label>
+                </div>
+                <div class="email">
+                  <input type="text" name="email"  onChange={this.onChange}/>
+                  <label>Mail</label>
+                </div>
+                <div class="password">
+                  <input type="password" name="password"  onChange={this.onChange}/>
+                  <label>Password</label>
+                </div>
+                <div class="submit">
+                  <button  class="dark">Register</button>
+                </div>
+                 { authError ? <p>{authError}</p> : null }
+                
+              </form>
+          </div>
+          </div>  
      <section class="user">
           <div class="user_options-container">
             <div class="user_options-text">
@@ -92,6 +143,7 @@ class SignUpFormBase extends Component {
               </div>
             </div>
             
+        
             <div class="user_options-forms" id="user_options-forms">
               <div class="user_forms-login">
                 <h2 class="forms_title">Login</h2>
@@ -202,7 +254,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps=(dispatch)=>{
 
-  //console.log(state);
+ 
   return{
     signIn:(creds)=>dispatch(signIn(creds)),
     signUp: (creds) => dispatch(signUp(creds))

@@ -7,13 +7,13 @@ import harsh from "./img/harsh.jpeg"
 import parth from "./img/parth.jpg"
 import "./aboutus.css"
 const AboutUs=()=>{
-	return(
+  return(
            <div className="Row box">
            <div className="card">
 
-           <Card> 
-           <div> 
-			<img src={ani} alt="aniket" />
+           <Card className="hover"> 
+           <div > 
+      <img src={ani} alt="aniket" />
            </div> 
             <Card.Header className="cb"> <h4>Aniket Dhole </h4></Card.Header>
             <Card.Body className="ani"> 
@@ -31,11 +31,11 @@ const AboutUs=()=>{
 
            </div>
            <div className="card">
-           <Card> 
+           <Card className="hover"> 
 
 
                    <div> 
-			<img src={shri} alt="Shrishail" />
+      <img src={shri} alt="Shrishail" />
            </div>
             
             <Card.Header className="cb"> <h4> Shrishail kumbhar </h4></Card.Header>
@@ -53,11 +53,11 @@ const AboutUs=()=>{
            </Card>
            </div>
            <div className="card">
-            <Card> 
+            <Card className="hover"> 
 
 
                    <div> 
-			<img src={mohit} alt="Mohit" />
+      <img src={mohit} alt="Mohit" />
            </div>
             
             <Card.Header className="cb"> <h4> Mohit Gandhi </h4></Card.Header>
@@ -75,19 +75,19 @@ const AboutUs=()=>{
            </Card>
           </div>
           <div className="card">
-          <Card> 
+          <Card className="hover"> 
 
            <div> 
       <img src={harsh} alt="Harsh" />
            </div> 
             <Card.Header className="cb"> <h4>Harsh Singhal</h4></Card.Header>
-            <Card.Body className="ani"> 
+            <Card.Body className="hs"> 
                <div>
                  <h6>Student At PCCOE </h6>
                  <h6> Contact: </h6>
                  <div className="row">
                  <a className="offset-2" href='https://www.linkedin.com/in/harsh-singhal-008a091a9'><i className="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
-                 <a className="offset-2" href='https://github.com/harshs-debugger'><i className="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
+                 <a className="offset-4" href='https://github.com/harshs-debugger'><i className="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
                 
                  </div>
                </div>
@@ -97,12 +97,12 @@ const AboutUs=()=>{
            
 
      <div className="card">
-     <Card> 
+     <Card className="hover"> 
            <div> 
       <img src={parth} alt="Parth" />
            </div> 
             <Card.Header className="cb"> <h4>Parth Shrivastava </h4></Card.Header>
-            <Card.Body className="ani"> 
+            <Card.Body className="ps"> 
                <div>
                  <h6>Student At PCCOE </h6>
                  <h6> Contact: </h6>
@@ -118,7 +118,7 @@ const AboutUs=()=>{
             
           </div>
      
-		)
+    )
 }
 
 export default AboutUs;

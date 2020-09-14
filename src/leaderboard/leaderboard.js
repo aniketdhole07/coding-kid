@@ -21,14 +21,14 @@ class leaderboard extends React.Component {
 		names.sort(function(a,b) {
 		    return b[0]-a[0]
 		});  
-		console.log(names);
+		//console.log(names);
 		return (
 			<div class="all">
 			<section>
 			  
 			  <h1>Leaderboard</h1>
 			  <div class="tbl-header">
-			    <table cellpadding="0" cellspacing="0" border="0">
+			    <table cellpadding="0" cellspacing="0" border="0" align="center">
 			      <thead>
 			        <tr>
 			 

@@ -12,7 +12,7 @@ input[type=text],input[type=email], textarea {
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
   background-color: #4CAF50;
-  color: white;
+  color: black;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
@@ -37,6 +37,8 @@ input[type=submit]:hover {
   background-color: #f2f2f2;
   padding: 20px;
   margin-bottom: 0;
+  color: black;
+  margin-top: 20px;
 }
 
 h6{

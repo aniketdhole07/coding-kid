@@ -23,13 +23,13 @@ class ContactUS extends Component {
     this.clearForm()
     e.preventDefault();
     if(this.state.fname!=''&&this.state.mail!=''&&this.state.feedback!='')
-     { console.log(this.state.mail);
+     { //console.log(this.state.mail);
         this.setState({
        flag:true
     },()=>{
       this.props.createFeedback(this.state);
         alert("feedback send successfully!!!!!");
-          console.log(e);
+          //console.log(e);
       
     });
         
@@ -46,7 +46,7 @@ class ContactUS extends Component {
       this.setState({
         flag:false
       },()=>{
-        console.log(this.flag)
+        //console.log(this.flag)
           return(
          <Redirect to='/' />
         )

@@ -27,7 +27,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 
 import how from "./how.png";
 import ContactUs from  '../contactus/contactus.js'
-
+import Howitworks from './howitworks/howitworks.js'
 export default function PersistentDrawerRight() {
   
   return (
@@ -120,6 +120,7 @@ export default function PersistentDrawerRight() {
      </div>
     
        <div>
+           <Howitworks/>
            <ContactUs />
          </div>    
       </div>

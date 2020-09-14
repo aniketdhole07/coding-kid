@@ -40,7 +40,9 @@ body {
   animation: ring 1.5s infinite;
 }
 
-
+.btn-grn{
+  background-color: green;
+}
 
 @keyframes ring {
   0% {

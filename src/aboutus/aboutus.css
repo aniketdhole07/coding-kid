@@ -33,7 +33,16 @@ img:hover{
     background: #24a19c;
     width: 270px;
 }
+.hs{
+ background: #a3d2ca;
+        width: 270px;
 
+}
+.ps{
+     background: #5eaaa8;
+        width: 270px;
+
+}
 .box{
     display: flex;
     flex-wrap: wrap;
@@ -48,4 +57,9 @@ img:hover{
     
     margin-top:30px;
     margin-bottom:30px;
+}
+.hover:hover{
+    z-index: 1;
+     transform: scale(1.15);
+  box-shadow: 7px 7px 19px #d2e603;
 }

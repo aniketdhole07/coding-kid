@@ -22,7 +22,7 @@ class C6 extends Component {
 
     
   const {solve,star}= this.props;
-  console.log("1",solve);
+  //console.log("1",solve);
   return (
     <div>
     
