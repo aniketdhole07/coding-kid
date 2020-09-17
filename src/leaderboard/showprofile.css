@@ -1,0 +1,36 @@
+@import 'https://fonts.googleapis.com/css?family=Ubuntu';
+.show{
+  background: -webkit-linear-gradient(left, #34ebe9, #d0ffae);
+  background: linear-gradient(to top, #34ebe9, #d0ffae);
+  font-family: 'Roboto', sans-serif;
+  padding: 30px;
+}
+
+.circular{
+	width: 200px;
+	height:200px;
+
+
+}
+
+.box{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content:center;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+    width: 50%;
+    height: 30%;
+    justify-content: space-between;
+    justify-content: space-around;
+    background: linear-gradient(left, #9d65c9, #5d54a4);
+  background: linear-gradient(to top, #9d65c9, #5d54a4);
+}
+.box p{
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
