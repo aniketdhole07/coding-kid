@@ -1,8 +1,10 @@
 import React from 'react'
 import './leaderboard.css'
+import {Link} from 'react-router-dom'
 class leaderboard extends React.Component {
 	render() {
 		const {data}= this.props;
+		//console.log(data);
 		var names=[];
 		var numH=[];
 		var numM=[];
@@ -14,6 +16,7 @@ class leaderboard extends React.Component {
 		    name.push(data[key]["solveH"].length);
 		    name.push(data[key]["solveM"].length);
 		    name.push(data[key]["solveE"].length);
+		    name.push(data[key]["id"]);
 		    var score=5*name[1]+3*name[2]+name[3];
 		    name.unshift(score);
 		    names.push(name);
@@ -31,7 +34,6 @@ class leaderboard extends React.Component {
 			    <table cellpadding="0" cellspacing="0" border="0" align="center">
 			      <thead>
 			        <tr>
-			 
 			          <th>Name</th>
 			          <th>Easy</th>
 			          <th>Medium</th>
@@ -47,8 +49,7 @@ class leaderboard extends React.Component {
 					return(
 					
 					<tr>
-			          
-			          <td>{name[1]}</td>
+			          <td><Link to={"/profile/"+name[5]} >{name[1]}</Link></td>
 			          <td>{name[4]}</td>
 			          <td>{name[3]}</td>
 			          <td>{name[2]}</td>
