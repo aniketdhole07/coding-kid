@@ -8,7 +8,7 @@ import C9 from './class9/C9.js';
 import C10 from './class10/C10.js';
 import Navigation from "./navigation/Navigation.js";
 import QuizDetails from './class6/quizdetails.js'
-
+import ShowProfile from './leaderboard/showProfile.js'
 import AboutUs from './aboutus/aboutus.js'
 import Leaderboard from './leaderboard/leaderboard.js'
 import NavDropdown from 'react-bootstrap/NavDropdown'
@@ -63,10 +63,11 @@ class App extends Component {
       <Route path="/class9" excat  component={C9} />
       <Route path="/class10" excat component={C10} />
       <Route path="/signin" excat component={SignUpPage} />
-      <Route path="/leaderboard" excat render={() => <Leaderboard data={data} />} />
+      <Route exact path="/leaderboard" excat render={() => <Leaderboard data={data} />} />
       <Route path="/account" excat render={() => <Account name={name} solveE={solveE} solveM={solveM} solveH={solveH} />} />
       
       <Route path="/about" component={AboutUs} />
+      <Route path="/profile/:id" render={props=> <ShowProfile {...props} data={data}/>}></Route>
       <Route path="/class/:id" excat render={props => <QuizDetails {...props} solve={solve} solveE={solveE} solveM={solveM} solveH={solveH} uid={uid}/>}></Route>
         <Route exact path="/" excat component={Ide} />
         <Redirect to="/" />
